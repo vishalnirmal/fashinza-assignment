@@ -4,8 +4,7 @@ import './Products.scss';
 
 function Products() {
     return (
-        <div>
-            Products
+        <div className="products">
             <Product/>
         </div>
     )

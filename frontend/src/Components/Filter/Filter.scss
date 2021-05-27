@@ -1,0 +1,67 @@
+.filter{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 15px;
+    border-right: 2px solid #afafaf;
+    &__search{
+        width: 100%;
+        max-width: 450px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 9fr 1fr;
+        &__input{
+            padding: 10px;
+            font-size: 1rem;
+        }
+        &__button{
+            padding: 10px;
+            cursor: pointer;
+        }
+    }
+    &__category{
+        &__heading{
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+        &__list{
+            max-height: 250px;
+            overflow: auto;
+            &__item{
+                cursor: pointer;
+                margin: 0.25rem 0;
+                &:hover{
+                    text-decoration: underline;
+                }
+                &.selected{
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    &__price{
+        display: flex;
+        gap: 5px;
+        &__input{
+            font-size: 0.9rem;
+            width: 100%;
+            -moz-appearance: textfield;
+            padding: 5px;
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+        &__button{
+            cursor: pointer;
+        }
+    }
+    &__reset{
+        cursor: pointer;
+        padding: 8px;
+    }
+}

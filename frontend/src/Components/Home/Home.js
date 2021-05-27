@@ -6,7 +6,7 @@ import './Home.scss';
 
 function Home() {
     return (
-        <div>
+        <div className="home">
             <Filter/>
             <Products/>
         </div>
