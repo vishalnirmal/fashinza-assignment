@@ -14,7 +14,7 @@ const addProduct = async (req, res) => {
 }
 
 const getProducts = async (req, res) => {
-    const parameters = req.body;
+    const parameters = req.query;
     const generateWhereClause = (parameters) => {
         let where = {};
         if (parameters['name']){
@@ -25,15 +25,16 @@ const getProducts = async (req, res) => {
         if (parameters['category']){
             where['category'] = parameters['category'];
         }
-        if (parameters['price']){
-            let filter = {};
-            if (parameters['price']['min']){
-                filter['$gte']=parameters['price']['min'];
+        if (parameters['min']){
+            where['price'] = {
+                '$gte': parameters['min']
             }
-            if (parameters['price']['max']){
-                filter['$lte']=parameters['price']['max'];
+        }
+        if (parameters['max']){
+            where['price'] = {
+                ...where['price'],
+                '$lte': parameters['max']
             }
-            where['price'] = filter;
         }
         return where;
     }
