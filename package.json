@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon app/server.js",
     "frontend": "npm start --prefix frontend",
-    "start": "node app/server.js"
+    "start": "node app/server.js",
+    "build": "npm run build --prefix frontend"
   },
   "keywords": [],
   "author": "Vishal Nirmal <vishalnirmal53@gmail.com>",
