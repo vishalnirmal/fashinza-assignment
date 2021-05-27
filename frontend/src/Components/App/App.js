@@ -4,7 +4,7 @@ import Home from '../Home/Home';
 import NavBar from '../NavBar/NavBar';
 import AddProduct from '../AddProduct/AddProduct';
 import Error404 from '../Error404/Error404';
-import './App.sass';
+import './App.scss';
 
 function App() {
     return (

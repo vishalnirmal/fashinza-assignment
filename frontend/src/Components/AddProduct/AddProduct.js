@@ -1,4 +1,5 @@
 import React from 'react'
+import './AddProduct.scss';
 
 function AddProduct() {
     return (

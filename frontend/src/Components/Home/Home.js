@@ -1,7 +1,9 @@
 import React from 'react';
-import './Home.sass';
 import Filter from '../Filter/Filter';
 import Products from '../Products/Products';
+import './Home.scss';
+
+
 function Home() {
     return (
         <div>

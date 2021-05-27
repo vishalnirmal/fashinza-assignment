@@ -1,5 +1,7 @@
 import React from 'react';
-import './Filter.sass';
+import './Filter.scss';
+
+
 function Filter() {
     return (
         <div>
