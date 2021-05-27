@@ -78,9 +78,21 @@ const updateProduct = async (req, res) => {
     }
 }
 
+const getCategories = async (req, res) => {
+    try {
+        const categories = await Product.find().distinct("category");
+        res.status(200).json(categories);
+    } catch (error) {
+        res.status(404).json({
+            message: error.message
+        });
+    }
+}
+
 module.exports = {
     addProduct,
     getProducts,
     deleteProduct,
-    updateProduct
+    updateProduct,
+    getCategories
 }
