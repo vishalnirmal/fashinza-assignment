@@ -1,12 +1,11 @@
 import React from 'react'
-import './App.sass';
 
-function App() {
+function Product() {
     return (
         <div>
-            App
+            Product
         </div>
     )
 }
 
-export default App;
+export default Product
