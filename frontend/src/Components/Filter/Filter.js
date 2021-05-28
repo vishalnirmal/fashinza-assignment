@@ -3,7 +3,6 @@ import {addName, addCategory, addPrice, removeFilters} from '../../redux/actions
 import {useDispatch, useSelector} from 'react-redux';
 import './Filter.scss';
 
-// const categories = ["category1", "category2", "category3", "category4", "category5", "category6", "category7", "category8", "category9", "category10"];
 function Filter() {
     const dispatch = useDispatch();
     const [name, setName] = useState("");
