@@ -3,3 +3,10 @@
     grid-template-columns: 1fr 8fr;
     align-items: flex-start;
 }
+
+@media (max-width: 768px){
+    .home{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+}

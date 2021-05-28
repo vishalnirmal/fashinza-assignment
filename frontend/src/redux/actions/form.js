@@ -7,10 +7,10 @@ export const submitForm = (product, type) => async (dispatch) => {
     });
     try {
         if (type === "add"){
-            await axios.post("http://localhost:5500/products", product);
+            await axios.post("/products", product);
         }
         else{
-            await axios.put(`http://localhost:5500/products/${product._id}`, product);
+            await axios.put(`/products/${product._id}`, product);
         }
         dispatch({
             type: actionTypes.FORM_SUCCESS,

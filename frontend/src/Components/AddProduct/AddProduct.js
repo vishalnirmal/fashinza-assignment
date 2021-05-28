@@ -16,7 +16,7 @@ function AddProduct(props) {
     });
     const type = props.type;
     const fetchAndUpdateField = async (id) => {
-        const response = await axios.get(`http://localhost:5500/products/${id}`);
+        const response = await axios.get(`/products/${id}`);
         setProduct(response.data);
     }
     useEffect(()=>{

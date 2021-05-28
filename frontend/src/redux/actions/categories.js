@@ -9,7 +9,7 @@ export const getCategories = () => async (dispatch) => {
     try {
         const categories = await axios({
             method: "GET",
-            url: "http://localhost:5500/products/categories"
+            url: "/products/categories"
         });
         dispatch({
             type: actionTypes.FETCH_CATEGORIES_SUCCESS,

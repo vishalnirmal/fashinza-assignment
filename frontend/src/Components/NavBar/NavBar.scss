@@ -1,22 +1,22 @@
 .navbar{
-    padding: 15px 30px;
-    background-color: bisque;
+    padding: 15px;
+    background-color: #ba135d;
     display: flex;
     gap: 1rem;
     justify-content: space-between;
     align-items: center;
     &__heading{
-        color: dimgray;
+        color: whitesmoke;
         font-size: 2rem;
     }
     &__link{
         position: relative;
-        color: dimgray;
+        color: whitesmoke;
         font-size: 1.5rem;
         &:hover::before{
             content: "";
             width: 100%;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid whitesmoke;
             position: absolute;
             bottom: -3px;
         }

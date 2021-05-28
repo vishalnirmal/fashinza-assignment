@@ -5,10 +5,10 @@
     align-items: flex-start;
     gap: 1rem;
     padding: 15px;
-    border-right: 2px solid #afafaf;
+    border-right: 2px solid #555;
     &__search{
         width: 100%;
-        max-width: 450px;
+        // max-width: 450px;
         margin: auto;
         display: grid;
         grid-template-columns: 9fr 1fr;
@@ -64,5 +64,12 @@
     &__reset{
         cursor: pointer;
         padding: 8px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 768px){
+    .filter{
+        border: none;
     }
 }

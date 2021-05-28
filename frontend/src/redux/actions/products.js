@@ -8,7 +8,7 @@ export const getProducts = (filter) => async (dispatch) => {
     try {
         const products = await axios({
             method: "GET",
-            url: "http://localhost:5500/products",
+            url: "/products",
             params: filter
         });
         dispatch({

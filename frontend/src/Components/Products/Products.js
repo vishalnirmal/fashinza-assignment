@@ -17,7 +17,7 @@ function Products() {
         dispatch(getProducts(filter));
     }, [dispatch, filter]);
     const deleteProduct = async (id) => {
-        await axios.delete(`http://localhost:5500/products/${id}`);
+        await axios.delete(`/products/${id}`);
         dispatch(getProducts(filter));
         dispatch(getCategories());
     }
