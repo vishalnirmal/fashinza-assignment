@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as actionTypes from '../constants/form';
+import {productAdded, productUpdated} from './product';
 
 export const submitForm = (product, type) => async (dispatch) => {
     dispatch({
@@ -8,9 +9,11 @@ export const submitForm = (product, type) => async (dispatch) => {
     try {
         if (type === "add"){
             await axios.post("/products", product);
+            dispatch(productAdded());
         }
         else{
             await axios.put(`/products/${product._id}`, product);
+            dispatch(productUpdated());
         }
         dispatch({
             type: actionTypes.FORM_SUCCESS,

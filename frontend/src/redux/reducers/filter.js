@@ -1,5 +1,5 @@
 import * as actionTypes from '../constants/filter';
-export const filterReducer = (state={}, action)=>{
+const filterReducer = (state={}, action)=>{
     switch (action.type) {
         case actionTypes.ADD_NAME_FILTER:
             return {
@@ -24,3 +24,5 @@ export const filterReducer = (state={}, action)=>{
             return state
     }
 }
+
+export default filterReducer;

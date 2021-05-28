@@ -1,0 +1,5 @@
+export const ADD_SUCCESS = "ADD_SUCCESS";
+export const UPDATE_SUCCESS = "UPDATE_SUCCESS";
+export const DELETE_ERROR = "DELETE_ERROR";
+export const DELETE_SUCCESS = "DELETE_SUCCESS";
+export const RESET_PRODUCT = "RESET_PRODUCT";

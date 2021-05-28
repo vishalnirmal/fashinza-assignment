@@ -1,6 +1,6 @@
 import * as actionTypes from '../constants/form';
 
-export const formReducer = (state={}, action) => {
+const formReducer = (state={}, action) => {
     switch (action.type) {
         case actionTypes.FORM_REQUEST:
             return {
@@ -22,3 +22,5 @@ export const formReducer = (state={}, action) => {
             return state
     }
 }
+
+export default formReducer;

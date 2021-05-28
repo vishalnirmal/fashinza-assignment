@@ -1,6 +1,6 @@
 import * as actionTypes from '../constants/categories';
 
-export const categoriesReducer = (state={categories:[]}, action) => {
+const categoriesReducer = (state={categories:[]}, action) => {
     switch (action.type) {
         case actionTypes.FETCH_CATEGORIES_REQUEST:
             return {
@@ -20,3 +20,5 @@ export const categoriesReducer = (state={categories:[]}, action) => {
             return state;
     }
 }
+
+export default categoriesReducer;
