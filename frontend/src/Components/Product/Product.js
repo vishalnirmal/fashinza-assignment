@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import './Product.scss';
 
-function Product({name, description, price, category}) {
+function Product({name, description, price, category, _id}) {
     const [isClicked, setIsClicked] = useState(false);
     return (
         <div className="product">
@@ -11,7 +12,7 @@ function Product({name, description, price, category}) {
             <p className="product__price">₹ <span>{price}</span></p>
             <i className={(isClicked?"fa-times":"fa-bars")+" fas product__menu-button"} onClick={()=>setIsClicked(!isClicked)}></i>
             <div className={(isClicked?"show":"")+" product__menu"}>
-                <p className="product__menu__item">Update</p>
+                <Link to={"/update/"+_id}><p className="product__menu__item">Update</p></Link>
                 <p className="product__menu__item">Delete</p>
             </div>
         </div>

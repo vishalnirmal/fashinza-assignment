@@ -2,7 +2,6 @@ import React, {useEffect} from 'react'
 import Product from '../Product/Product';
 import {useDispatch, useSelector} from 'react-redux';
 import {getProducts} from '../../redux/actions/products';
-import {getCategories} from '../../redux/actions/categories';
 import './Products.scss';
 
 function Products() {
@@ -11,7 +10,6 @@ function Products() {
     const {loading, error, data} = products;
     useEffect(()=>{
         dispatch(getProducts(filter));
-        dispatch(getCategories());
     }, [dispatch, filter]);
     return (
         <div className="products">

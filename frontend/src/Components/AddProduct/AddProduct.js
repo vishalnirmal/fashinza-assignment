@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import { submitForm, resetForm } from '../../redux/actions/form';
 import {useDispatch, useSelector} from 'react-redux';
+import {getCategories} from '../../redux/actions/categories';
 import './AddProduct.scss';
+import axios from 'axios';
 
 function AddProduct(props) {
     const dispatch = useDispatch();
@@ -13,14 +15,21 @@ function AddProduct(props) {
         price: ""
     });
     const type = props.type;
+    const fetchAndUpdateField = async (id) => {
+        const response = await axios.get(`http://localhost:5500/products/${id}`);
+        setProduct(response.data);
+    }
     useEffect(()=>{
         if (success){
             dispatch(resetForm());
-            resetProduct();
             props.history.push("/");
+            dispatch(getCategories());
         }
         if (type==="update"){
-            console.log("This is a update product component", props.match.params.id);
+            fetchAndUpdateField(props.match.params.id);
+        }
+        return () => {
+            resetProduct();
         }
     }, [success, props.history, type, dispatch, props.match.params.id]);
     const changeProduct = (e) => {
@@ -33,7 +42,7 @@ function AddProduct(props) {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(submitForm(product));
+        dispatch(submitForm(product, type));
     }
     const resetProduct = () => {
         setProduct({
