@@ -10,7 +10,7 @@ function Product({name, description, price, category, _id, deleteProduct}) {
             <p className="product__category">{category}</p>
             <p className="product__description">{description}</p>
             <p className="product__price">₹ <span>{price}</span></p>
-            <i className={(isClicked?"fa-times":"fa-bars")+" fas product__menu-button"} onClick={()=>setIsClicked(!isClicked)}></i>
+            <i className={(isClicked?"fa-times":"fa-ellipsis-v")+" fas product__menu-button"} onClick={()=>setIsClicked(!isClicked)}></i>
             <div className={(isClicked?"show":"")+" product__menu"}>
                 <Link to={"/update/"+_id}><p className="product__menu__item">Update</p></Link>
                 <p className="product__menu__item" onClick={() => deleteProduct(_id)}>Delete</p>

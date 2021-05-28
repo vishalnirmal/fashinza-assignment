@@ -12,7 +12,7 @@ function Products() {
     const {loading, error, data} = products;
     useEffect(()=>{
         dispatch(getCategories());
-    }, []);
+    }, [dispatch]);
     useEffect(()=>{
         dispatch(getProducts(filter));
     }, [dispatch, filter]);
