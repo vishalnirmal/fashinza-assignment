@@ -66,9 +66,11 @@ function Filter() {
                         <h2>Loading</h2>:
                         error?
                         <h2>Unable to fetch list of categories</h2>:
+                        categories.length?
                         categories.map((category, index)=>{
                             return <p key={index} className={(filter.category === category?"selected":"")+" filter__category__list__item"} onClick={()=>handleCategorySubmit(category)}>{category}</p>
-                        })
+                        }):
+                        <h2>No categories to show</h2>
                         
                     }
                 </div>

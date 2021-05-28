@@ -31,6 +31,7 @@
             max-height: 250px;
             overflow: auto;
             &__item{
+                text-transform: capitalize;
                 cursor: pointer;
                 margin: 0.25rem 0;
                 &:hover{
