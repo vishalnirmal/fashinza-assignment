@@ -19,6 +19,7 @@
     "mongoose": "^5.12.11"
   },
   "devDependencies": {
+    "lorem-ipsum": "^2.0.3",
     "nodemon": "^2.0.7"
   }
 }
