@@ -31,7 +31,8 @@ const getProducts = async (req, res) => {
         let where = {};
         if (parameters['name']){
             where['name'] = {
-                "$regex":parameters['name']
+                "$regex":parameters['name'],
+                '$options': 'i'
             };
         }
         if (parameters['category']){
