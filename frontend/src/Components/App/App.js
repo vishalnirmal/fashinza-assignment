@@ -12,7 +12,8 @@ function App() {
             <NavBar/>
             <Switch>
                 <Route path="/" exact component={Home}/>
-                <Route path="/add" component={AddProduct}/>
+                <Route path="/add" render={(props)=>(<AddProduct type={"add"} {...props} />)}/>
+                <Route path="/update/:id" render={(props)=>(<AddProduct type={"update"} {...props} />)}/>
                 <Route path="" component={Error404}/>
             </Switch>
         </>

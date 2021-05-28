@@ -57,8 +57,8 @@ function Filter() {
                         <h2>Loading</h2>:
                         error?
                         <h2>Unable to fetch list of categories</h2>:
-                        categories.map(category=>{
-                            return <p className={(filter.category === category?"selected":"")+" filter__category__list__item"} onClick={()=>handleCategorySubmit(category)}>{category}</p>
+                        categories.map((category, index)=>{
+                            return <p key={index} className={(filter.category === category?"selected":"")+" filter__category__list__item"} onClick={()=>handleCategorySubmit(category)}>{category}</p>
                         })
                         
                     }

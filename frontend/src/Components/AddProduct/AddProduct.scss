@@ -6,7 +6,19 @@
     &__heading{
         text-align: center;
         font-size: 1.5rem;
-        margin: 10px;
+        margin: 10px 0;
+    }
+    &__message{
+        color: white;
+        padding: 10px;
+        margin: 10px 0;
+        text-align: center;
+        &--success{
+            background-color: lightgreen;
+        }
+        &--error{
+            background-color: crimson;
+        }
     }
     &__form{
         display: flex;
