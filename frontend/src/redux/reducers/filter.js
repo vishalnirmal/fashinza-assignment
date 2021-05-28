@@ -13,10 +13,18 @@ const filterReducer = (state={}, action)=>{
             }
         case actionTypes.ADD_PRICE_FILTER:
             let new_state = {...state}
-            if (action.payload.min)
+            if (action.payload.min){
                 new_state['min'] = action.payload.min
-            if (action.payload.max)
+            }
+            else{
+                delete new_state['min'];
+            }
+            if (action.payload.max){
                 new_state['max'] = action.payload.max
+            }
+            else{
+                delete new_state['max'];
+            }
             return new_state
         case actionTypes.REMOVE_FILTER:
             return {}
