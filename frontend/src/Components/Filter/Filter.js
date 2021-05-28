@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {addName, addCategory, addPrice, removeFilters} from '../../redux/actions/filter';
 import {useDispatch, useSelector} from 'react-redux';
 import './Filter.scss';
@@ -13,6 +13,15 @@ function Filter() {
     });
     const {loading, error, categories} = useSelector(state=>state.categories);
     const filter = useSelector(state=>state.filter);
+    useEffect(()=>{
+        if (Object.keys(filter).length === 0){
+            setName("");
+            setPrice({
+                min: "",
+                max: ""
+            });
+        }
+    }, [filter]);
     const changeName = (e) => {
         setName(e.target.value);
     }
