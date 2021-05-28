@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import './Product.scss';
 
-function Product({name, description, price, category, _id}) {
+function Product({name, description, price, category, _id, deleteProduct}) {
     const [isClicked, setIsClicked] = useState(false);
     return (
         <div className="product">
@@ -13,7 +13,7 @@ function Product({name, description, price, category, _id}) {
             <i className={(isClicked?"fa-times":"fa-bars")+" fas product__menu-button"} onClick={()=>setIsClicked(!isClicked)}></i>
             <div className={(isClicked?"show":"")+" product__menu"}>
                 <Link to={"/update/"+_id}><p className="product__menu__item">Update</p></Link>
-                <p className="product__menu__item">Delete</p>
+                <p className="product__menu__item" onClick={() => deleteProduct(_id)}>Delete</p>
             </div>
         </div>
     )
