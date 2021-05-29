@@ -19,7 +19,25 @@ const productsReducer = (state={data:[]}, action) => {
                 error: true
             }
         case actionTypes.DELETE_PRODUCT:
-            let products = state.data.filter(product=>product._id!==action.payload);
+            var products = state.data.filter(product=>product._id!==action.payload);
+            return {
+                loading: false,
+                error: false,
+                data: products
+            }
+        case actionTypes.ADD_PRODUCT:
+            products = [...state.data, action.payload];
+            return {
+                loading: false,
+                error: false,
+                data: products
+            }
+        case actionTypes.UPDATE_PRODUCT:
+            products = state.data.map(product=>{
+                if (product._id === action.payload._id)
+                    return action.payload;
+                return product;
+            });
             return {
                 loading: false,
                 error: false,

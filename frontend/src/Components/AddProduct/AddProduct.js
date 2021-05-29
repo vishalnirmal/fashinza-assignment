@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { submitForm, resetForm } from '../../redux/actions/form';
+import { submitForm } from '../../redux/actions/form';
 import {useDispatch, useSelector} from 'react-redux';
-import {getCategories} from '../../redux/actions/categories';
 import './AddProduct.scss';
 import axios from 'axios';
 
@@ -21,9 +20,7 @@ function AddProduct(props) {
     }
     useEffect(()=>{
         if (success){
-            dispatch(resetForm());
             props.history.push("/");
-            dispatch(getCategories());
         }
         if (type==="update"){
             fetchAndUpdateField(props.match.params.id);
@@ -31,7 +28,7 @@ function AddProduct(props) {
         return () => {
             resetProduct();
         }
-    }, [success, props.history, type, dispatch, props.match.params.id]);
+    }, [success, props.history, type, props.match.params.id]);
     const changeProduct = (e) => {
         setProduct(oldProduct=>{
             return {

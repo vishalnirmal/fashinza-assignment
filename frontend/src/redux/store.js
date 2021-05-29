@@ -6,7 +6,8 @@ import reducer from './reducers/reducers';
 const INITIAL_STATE = {
     products: {
         data: []
-    }
+    },
+    filter: {}
 };
 
 const store = createStore(reducer, INITIAL_STATE, composeWithDevTools(applyMiddleware(thunk)));
