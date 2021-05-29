@@ -20,6 +20,20 @@ function Filter() {
                 max: ""
             });
         }
+        else{
+            if (filter.name)
+                setName(filter.name);
+            if (filter.min)
+                setPrice(price=>({
+                    ...price,
+                    min: filter.min
+                }));
+            if (filter.max)
+                setPrice(price=>({
+                    ...price,
+                    max: filter.max
+                }));
+        }
     }, [filter]);
     const changeName = (e) => {
         setName(e.target.value);

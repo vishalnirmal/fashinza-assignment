@@ -1,32 +1,41 @@
 import * as actionTypes from '../constants/filter';
 const filterReducer = (state={}, action)=>{
+    var updatedFilter = {};
     switch (action.type) {
         case actionTypes.ADD_NAME_FILTER:
-            return {
+            updatedFilter = {
                 ...state,
                 name: action.payload
             }
+            localStorage.setItem('filter', JSON.stringify(updatedFilter));
+            return updatedFilter;
         case actionTypes.ADD_CATEGORY_FILTER:
-            return {
+            updatedFilter = {
                 ...state,
                 category: action.payload
             }
+            localStorage.setItem('filter', JSON.stringify(updatedFilter));
+            return updatedFilter;
         case actionTypes.ADD_PRICE_FILTER:
-            let new_state = {...state}
+            updatedFilter = {
+                ...state
+            }
             if (action.payload.min){
-                new_state['min'] = action.payload.min
+                updatedFilter['min'] = action.payload.min
             }
             else{
-                delete new_state['min'];
+                delete updatedFilter['min'];
             }
             if (action.payload.max){
-                new_state['max'] = action.payload.max
+                updatedFilter['max'] = action.payload.max
             }
             else{
-                delete new_state['max'];
+                delete updatedFilter['max'];
             }
-            return new_state
+            localStorage.setItem('filter', JSON.stringify(updatedFilter));
+            return updatedFilter
         case actionTypes.REMOVE_FILTER:
+            localStorage.setItem('filter', JSON.stringify({}));
             return {}
         default:
             return state
