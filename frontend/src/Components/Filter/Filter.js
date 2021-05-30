@@ -81,7 +81,7 @@ function Filter() {
                         <h2>Unable to fetch list of categories</h2>:
                         categories.length?
                         categories.map((category, index)=>{
-                            return <p key={index} className={(filter.category === category?"selected":"")+" filter__category__list__item"} onClick={()=>handleCategorySubmit(category)}>{category}</p>
+                            return <p key={index} className={(filter.category === category._id?"selected":"")+" filter__category__list__item"} onClick={()=>handleCategorySubmit(category._id)}>{category._id} <span>({category.count})</span></p>
                         }):
                         <h2>No categories to show</h2>
                         

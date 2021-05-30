@@ -94,7 +94,18 @@ const updateProduct = async (req, res) => {
 
 const getCategories = async (req, res) => {
     try {
-        const categories = await Product.find().distinct("category");
+        const categories = await Product.aggregate([{
+            "$group": {
+                _id: "$category",
+                count: {
+                    "$sum": 1
+                }
+            }},
+        {
+            "$sort": {
+                _id: 1
+            }
+        }]);
         res.status(200).json(categories);
     } catch (error) {
         res.status(404).json({

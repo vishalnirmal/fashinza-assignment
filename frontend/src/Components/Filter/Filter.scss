@@ -28,7 +28,7 @@
             margin: 0.5rem 0;
         }
         &__list{
-            height: 175px;
+            min-height: 175px;
             overflow: auto;
             &__item{
                 text-transform: capitalize;
@@ -40,6 +40,9 @@
                 &.selected{
                     font-weight: bold;
                     font-size: 1rem;
+                }
+                span{
+                    font-size: 0.7em;
                 }
             }
         }
