@@ -7,7 +7,7 @@
     "dev": "nodemon app/server.js",
     "frontend": "npm start --prefix frontend",
     "start": "node app/server.js",
-    "build-dev": "npm run build --prefix frontend"
+    "build-dev": "rmdir /s /q build && npm run build --prefix frontend && move frontend/build build"
   },
   "keywords": [],
   "author": "Vishal Nirmal <vishalnirmal53@gmail.com>",
